@@ -1,0 +1,6 @@
+import type { Metadata } from "next";
+import { ArticleBody } from "@/components/ArticleBody";
+import { articles } from "@/lib/content";
+const article=articles[2];
+export const metadata:Metadata={title:article.title,description:article.dek};
+export default function Page(){return <ArticleBody {...article}><p className="lead">The most useful apps often feel smaller than the problem they solve.</p><p>They open quickly, explain themselves without a tutorial wall, and make the main action easy to find. The user should understand what the app is for before learning everything it can do.</p><h2>One job, clearly expressed</h2><p>Feature count is not the same as value. A strong product page and a strong app both answer the same question early: what can I do here, and why is it worth my time?</p><div className="quote">Polish matters most when it makes the product disappear into the task.</div><h2>Trust is part of utility</h2><p>Predictable navigation, readable copy, privacy-aware choices, and honest descriptions reduce uncertainty. That matters especially in education and well-being, where unclear claims can undermine otherwise good software.</p><p>Useful products are not finished when they work. They are finished when people can understand how and why to use them.</p></ArticleBody>}
