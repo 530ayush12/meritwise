@@ -1,0 +1,6 @@
+import type { Metadata } from "next";
+import { ArticleBody } from "@/components/ArticleBody";
+import { articles } from "@/lib/content";
+const article=articles[1];
+export const metadata:Metadata={title:article.title,description:article.dek};
+export default function Page(){return <ArticleBody {...article}><p className="lead">A calm digital experience is built from behavior, not decoration.</p><p>Soft colors can help, but they cannot compensate for noisy notifications, confusing choices, or language that creates unnecessary urgency. Products that support healthier habits should make attention feel voluntary.</p><h2>Design for a slower rhythm</h2><p>Spacing, short flows, predictable navigation, and restrained motion can make an interface easier to understand. More importantly, the product should avoid making every action feel like a demand for engagement.</p><div className="quote">Calm design is less about adding serenity and more about removing needless pressure.</div><h2>Be clear about the product's role</h2><p>Well-being products should communicate their limits plainly. General wellness tools can support reflection and everyday habits, but they should not pretend to replace qualified professional care.</p><p>That combination—quiet interaction, clear language, and honest boundaries—is a stronger foundation than aesthetics alone.</p></ArticleBody>}
