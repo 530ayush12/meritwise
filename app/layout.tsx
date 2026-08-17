@@ -15,9 +15,13 @@ export const metadata: Metadata = {
   description: "Independent apps, first-person stories, and writing about learning, well-being, product design, and building thoughtful technology.",
   applicationName: "Meritwise",
   icons: {
-    icon: "/icon.svg",
-    shortcut: "/icon.svg",
-    apple: "/icon.svg",
+    icon: [
+      { url: "/meritwise-icon.png?v=4", type: "image/png", sizes: "1024x1024" },
+    ],
+    shortcut: "/meritwise-icon.png?v=4",
+    apple: [
+      { url: "/meritwise-icon.png?v=4", type: "image/png", sizes: "1024x1024" },
+    ],
   },
   openGraph: {
     title: "Meritwise",
