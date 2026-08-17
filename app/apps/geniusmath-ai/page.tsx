@@ -5,6 +5,7 @@ import { AppStoreBadge } from "@/components/AppStoreBadge";
 import { apps } from "@/lib/content";
 
 const app = apps[0];
+const geniusMathIcon = "/geniusmath-ai.webp?v=20260817-fx-final";
 
 export const metadata: Metadata = {
   title: "GeniusMath AI — AI Math Practice",
@@ -20,12 +21,13 @@ export default function GeniusMathPage() {
             <div className="breadcrumb"><Link href="/apps">Apps</Link> / GeniusMath AI</div>
             <div className="product-brand-row">
               <img
-                className="product-title-icon"
-                src="/geniusmath-ai.webp?v=20260816-fx"
+                className="product-title-icon fx-icon"
+                src={geniusMathIcon}
                 alt="GeniusMath AI f(x) app icon"
                 width="88"
                 height="88"
                 decoding="sync"
+                loading="eager"
               />
               <div>
                 <p className="kicker">{app.category}</p>
@@ -41,10 +43,10 @@ export default function GeniusMathPage() {
             </div>
           </div>
 
-          <div className="product-art violet" data-depth="0.65" data-tilt>
+          <div className="product-art violet fx-art" data-depth="0.65" data-tilt>
             <div className="ambient-ring ambient-ring-one" aria-hidden="true" />
             <div className="ambient-ring ambient-ring-two" aria-hidden="true" />
-            <img className="real-app-icon" src="/geniusmath-ai.webp?v=20260816-fx" alt="GeniusMath AI f(x) app icon" width="1024" height="1024" decoding="async" />
+            <img className="real-app-icon fx-icon" src={geniusMathIcon} alt="GeniusMath AI f(x) app icon" width="1024" height="1024" decoding="async" loading="eager" />
           </div>
         </section>
 
