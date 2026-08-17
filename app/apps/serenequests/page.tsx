@@ -14,9 +14,9 @@ export const metadata: Metadata = {
 export default function SereneQuestsPage() {
   return (
     <PageShell>
-      <main>
-        <section className="product-hero shell">
-          <div data-depth="1.05">
+      <main className="product-page serene-product">
+        <section className="product-hero shell" data-reveal>
+          <div className="product-copy" data-depth="1.05">
             <div className="breadcrumb"><Link href="/apps">Apps</Link> / SereneQuests</div>
             <p className="kicker">{app.category}</p>
             <h1>SereneQuests</h1>
@@ -24,40 +24,23 @@ export default function SereneQuestsPage() {
             <p className="product-byline">Developed by Ayush Rout</p>
             <div className="product-actions">
               <AppStoreBadge href={app.appStore} label={app.name} />
-              <a className="button secondary" href="https://serenequests.com" target="_blank" rel="noreferrer">Open serenequests.com ↗</a>
               <Link className="button secondary" href="/articles/designing-healthier-digital-habits">Why I built it</Link>
             </div>
           </div>
-          <div className="product-visual sage" data-depth="1.7">
-            <img className="real-app-icon" src="/serenequests.webp" alt="SereneQuests app icon" width="512" height="512" />
+
+          <div className="product-art sage" data-depth="1.55" data-tilt>
+            <div className="ambient-ring ambient-ring-one" aria-hidden="true" />
+            <div className="ambient-ring ambient-ring-two" aria-hidden="true" />
+            <img className="real-app-icon" src="/serenequests.webp" alt="SereneQuests app icon" width="1024" height="1024" />
           </div>
         </section>
 
-        <section className="section shell">
-          <div className="section-heading"><span>01</span><div><p className="kicker">Live web preview</p><h2>Explore SereneQuests here.</h2></div></div>
-          <div className="embed-shell" data-depth=".45">
-            <div className="embed-toolbar">
-              <div><span className="embed-dot"/><span className="embed-dot"/><span className="embed-dot"/></div>
-              <span>serenequests.com</span>
-              <a href="https://serenequests.com" target="_blank" rel="noreferrer">Open full site ↗</a>
-            </div>
-            <iframe
-              className="serene-embed"
-              src="https://serenequests.com"
-              title="SereneQuests website preview"
-              loading="lazy"
-              referrerPolicy="strict-origin-when-cross-origin"
-            />
-          </div>
-          <p className="embed-note">If your browser or the SereneQuests site blocks embedded viewing, use “Open full site” above.</p>
+        <section className="section shell product-section" data-reveal>
+          <div className="section-heading"><span>01</span><div><p className="kicker">Highlights</p><h2>Designed to feel quieter.</h2></div></div>
+          <div className="feature-grid">{app.features.map((feature,i)=><div className="feature-card" data-depth=".45" data-tilt key={feature}><span>0{i+1}</span><h3>{feature}</h3></div>)}</div>
         </section>
 
-        <section className="section shell">
-          <div className="section-heading"><span>02</span><div><p className="kicker">Highlights</p><h2>Designed to feel quieter.</h2></div></div>
-          <div className="feature-grid">{app.features.map((feature,i)=><div className="feature-card" data-depth=".55" key={feature}><span>0{i+1}</span><h3>{feature}</h3></div>)}</div>
-        </section>
-
-        <section className="section shell">
+        <section className="section shell product-section" data-reveal>
           <div className="story-block personal">
             <h3>Why I built it</h3>
             <div className="first-person">
