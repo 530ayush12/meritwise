@@ -18,6 +18,7 @@ export default function GeniusMathPage(){
         <p className="kicker">{app.category}</p>
         <h1>GeniusMath AI</h1>
         <p className="page-copy">{app.description}</p>
+        <p className="product-byline">Developed by Ayush Rout</p>
         <div className="product-actions">
           <AppStoreBadge href={app.appStore} label={app.name} />
           <Link className="button secondary" href="/articles/thoughtful-technology-personal-learning">Why I built it</Link>
