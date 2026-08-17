@@ -2,6 +2,11 @@ import Link from "next/link";
 import { PageShell } from "@/components/SiteChrome";
 import { apps, articles } from "@/lib/content";
 
+const appIcons: Record<string, string> = {
+  "geniusmath-ai": "/geniusmath-ai.webp?v=20260817-fx-final",
+  serenequests: "/serenequests.webp?v=20260817-fx-final",
+};
+
 export default function Home() {
   return (
     <PageShell>
@@ -32,7 +37,18 @@ export default function Home() {
           <div className="app-grid perspective-grid">
             {apps.map((app, index) => (
               <Link className={`app-card ${app.accent}`} href={`/apps/${app.slug}`} key={app.slug} data-depth={index === 0 ? "1.2" : "1.6"}>
-                <div className="app-topline"><span className="pill">{app.category}</span><span className="arrow">↗</span></div>
+                <div className="app-topline">
+                  <img
+                    className={`app-card-icon ${app.slug === "geniusmath-ai" ? "fx-icon" : ""}`}
+                    src={appIcons[app.slug]}
+                    alt={`${app.name} app icon`}
+                    width="72"
+                    height="72"
+                    decoding="async"
+                    loading="eager"
+                  />
+                  <span className="arrow">↗</span>
+                </div>
                 <div>
                   <p className="micro">{app.eyebrow}</p>
                   <h3>{app.name}</h3>
