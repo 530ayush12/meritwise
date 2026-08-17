@@ -18,7 +18,20 @@ export default function GeniusMathPage() {
         <section className="product-hero shell" data-reveal>
           <div className="product-copy" data-depth="0.45">
             <div className="breadcrumb"><Link href="/apps">Apps</Link> / GeniusMath AI</div>
-            <p className="kicker">{app.category}</p>
+            <div className="product-brand-row">
+              <img
+                className="product-title-icon"
+                src="/geniusmath-ai.webp?v=20260816-fx"
+                alt="GeniusMath AI f(x) app icon"
+                width="88"
+                height="88"
+                decoding="sync"
+              />
+              <div>
+                <p className="kicker">{app.category}</p>
+                <span className="product-brand-caption">GeniusMath AI for iOS</span>
+              </div>
+            </div>
             <h1>GeniusMath AI</h1>
             <p className="page-copy">{app.description}</p>
             <p className="product-byline">Developed by Ayush Rout</p>
@@ -31,7 +44,7 @@ export default function GeniusMathPage() {
           <div className="product-art violet" data-depth="0.65" data-tilt>
             <div className="ambient-ring ambient-ring-one" aria-hidden="true" />
             <div className="ambient-ring ambient-ring-two" aria-hidden="true" />
-            <img className="real-app-icon" src="/geniusmath-ai.webp?v=20260817-2" alt="GeniusMath AI app icon" width="1024" height="1024" decoding="async" />
+            <img className="real-app-icon" src="/geniusmath-ai.webp?v=20260816-fx" alt="GeniusMath AI f(x) app icon" width="1024" height="1024" decoding="async" />
           </div>
         </section>
 
