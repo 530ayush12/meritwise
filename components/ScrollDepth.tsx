@@ -1,9 +1,12 @@
 "use client";
 
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export function ScrollDepth() {
-  useEffect(() => {
+  const pathname = usePathname();
+
+  useLayoutEffect(() => {
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
     const smallScreen = window.matchMedia("(max-width: 820px)").matches;
@@ -34,6 +37,10 @@ export function ScrollDepth() {
     const depthNodes = Array.from(document.querySelectorAll<HTMLElement>("[data-depth]"));
     const tiltNodes = Array.from(document.querySelectorAll<HTMLElement>("[data-tilt], .app-card, .contact-card, .editorial-card"));
 
+    // Next.js keeps this component mounted during client-side navigation. Reset reveal
+    // state for the NEW route so product pages never remain blurred/transparent until refresh.
+    revealNodes.forEach((node) => node.classList.remove("is-visible"));
+
     if (reduceMotion) {
       revealNodes.forEach((node) => node.classList.add("is-visible"));
       return;
@@ -48,9 +55,19 @@ export function ScrollDepth() {
           }
         });
       },
-      { threshold: 0.06, rootMargin: "0px 0px -4% 0px" },
+      { threshold: 0.04, rootMargin: "0px 0px -2% 0px" },
     );
-    revealNodes.forEach((node) => revealObserver.observe(node));
+
+    // Make above-the-fold content visible immediately. This is especially important on
+    // iPad Safari, where a route can paint before IntersectionObserver's first callback.
+    revealNodes.forEach((node) => {
+      const rect = node.getBoundingClientRect();
+      if (rect.top < window.innerHeight * 1.05 && rect.bottom > -40) {
+        node.classList.add("is-visible");
+      } else {
+        revealObserver.observe(node);
+      }
+    });
 
     const activeDepth = new Set<HTMLElement>();
     const depthObserver = new IntersectionObserver(
@@ -130,7 +147,7 @@ export function ScrollDepth() {
       if (frame) cancelAnimationFrame(frame);
       tiltCleanups.forEach((cleanup) => cleanup());
     };
-  }, []);
+  }, [pathname]);
 
   return null;
 }
