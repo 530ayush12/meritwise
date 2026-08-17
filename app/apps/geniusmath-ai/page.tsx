@@ -11,7 +11,7 @@ export default function GeniusMathAIPage() {
         <section className="app-detail-hero shell">
           <div className="app-detail-icon-wrap">
             <img
-              src="/geniusmath-ai.webp?v=20260816"
+              src="https://raw.githubusercontent.com/530ayush12/GeniusMath-AI-iOS/main/GeniusMath%20AI/Assets.xcassets/AppIcon.appiconset/GeniusMath-AppIcon-Zoomed-1024.png?v=20260817"
               alt="GeniusMath AI app icon"
               className="app-detail-icon"
               width={180}
