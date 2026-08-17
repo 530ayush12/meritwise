@@ -33,8 +33,22 @@ export default function Home() {
             {apps.map((app, index) => (
               <Link className={`app-card ${app.accent}`} href={`/apps/${app.slug}`} key={app.slug} data-depth={index === 0 ? "1.2" : "1.6"}>
                 <div className="app-topline"><span className="pill">{app.category}</span><span className="arrow">↗</span></div>
-                <div><p className="micro">{app.eyebrow}</p><h3>{app.name}</h3><p>{app.description}</p></div>
-                <span className="text-link">See how I built it</span>
+                <div>
+                  <p className="micro">{app.eyebrow}</p>
+                  <h3>{app.name}</h3>
+                  <p>{app.description}</p>
+                </div>
+                <div className="app-card-footer">
+                  <span className="text-link">See how I built it</span>
+                  <img
+                    className="app-card-store-badge"
+                    src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                    alt={`${app.name} is available on the App Store`}
+                    width="120"
+                    height="40"
+                    loading="lazy"
+                  />
+                </div>
               </Link>
             ))}
           </div>
