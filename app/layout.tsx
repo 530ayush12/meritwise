@@ -4,6 +4,7 @@ import "./globals.css";
 import "./refine.css";
 import "./extras.css";
 import "./motion.css";
+import "./icon-fidelity.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://meritwise.xyz"),
