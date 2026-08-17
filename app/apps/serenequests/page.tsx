@@ -36,7 +36,39 @@ export default function SereneQuestsPage() {
         </section>
 
         <section className="section shell product-section" data-reveal>
-          <div className="section-heading"><span>01</span><div><p className="kicker">Highlights</p><h2>Designed to feel quieter.</h2></div></div>
+          <div className="section-heading">
+            <span>01</span>
+            <div>
+              <p className="kicker">Live Web Preview</p>
+              <h2>Explore SereneQuests in place.</h2>
+            </div>
+          </div>
+
+          <div className="embed-shell" data-depth=".38">
+            <div className="embed-toolbar">
+              <div aria-hidden="true">
+                <span className="embed-dot" />
+                <span className="embed-dot" />
+                <span className="embed-dot" />
+              </div>
+              <span>Live · serenequests.com</span>
+              <a href="https://serenequests.com" target="_blank" rel="noreferrer" aria-label="Open SereneQuests website in a new tab">
+                Open full site ↗
+              </a>
+            </div>
+            <iframe
+              className="serene-embed"
+              src="https://serenequests.com"
+              title="Live preview of the SereneQuests website"
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+            />
+          </div>
+          <p className="embed-note">Interactive live preview. Use “Open full site” in the top-right corner to open SereneQuests in a new tab.</p>
+        </section>
+
+        <section className="section shell product-section" data-reveal>
+          <div className="section-heading"><span>02</span><div><p className="kicker">Highlights</p><h2>Designed to feel quieter.</h2></div></div>
           <div className="feature-grid">{app.features.map((feature,i)=><div className="feature-card" data-depth=".45" data-tilt key={feature}><span>0{i+1}</span><h3>{feature}</h3></div>)}</div>
         </section>
 
