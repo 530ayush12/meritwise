@@ -6,7 +6,7 @@ import { apps } from "@/lib/content";
 export const metadata: Metadata = { title: "Apps" };
 
 const icons: Record<string, string> = {
-  "geniusmath-ai": "/geniusmath-ai.webp?v=20260817-fx-final",
+  "geniusmath-ai": "https://raw.githubusercontent.com/530ayush12/GeniusMath-AI-iOS/main/GeniusMath%20AI/Assets.xcassets/AppIcon.appiconset/GeniusMath-AppIcon-Zoomed-1024.png?v=20260817",
   serenequests: "/serenequests.webp?v=20260817-fx-final",
 };
 
