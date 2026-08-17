@@ -29,7 +29,7 @@ export default function GeniusMathAIPage() {
             <p>
               GeniusMath AI is a focused math-practice experience designed to make personalized practice feel fast, clear, and useful. Generate fresh questions, work through them at your own pace, and review explanations when you need another way into a problem.
             </p>
-            <AppStoreBadge href="https://apps.apple.com/us/app/geniusmath-ai/id6790629890" />
+            <AppStoreBadge href="https://apps.apple.com/us/app/geniusmath-ai/id6790629890" label="GeniusMath AI" />
           </div>
         </section>
 
