@@ -24,7 +24,9 @@ export default function GeniusMathPage(){
           <Link className="button secondary" href="/articles/thoughtful-technology-personal-learning">Why I built it</Link>
         </div>
       </div>
-      <div className="product-visual violet" data-depth="1.7"><div className="app-icon">G</div></div>
+      <div className="product-visual violet" data-depth="1.7">
+        <img className="real-app-icon" src="/geniusmath-ai.webp" alt="GeniusMath AI app icon" width="512" height="512" />
+      </div>
     </section>
 
     <section className="section shell">
