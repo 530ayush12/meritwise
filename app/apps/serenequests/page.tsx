@@ -5,6 +5,7 @@ import { AppStoreBadge } from "@/components/AppStoreBadge";
 import { apps } from "@/lib/content";
 
 const app = apps[1];
+const sereneQuestsIcon = "/serenequests.webp";
 
 export const metadata: Metadata = {
   title: "SereneQuests — Wellness Companion",
@@ -16,9 +17,23 @@ export default function SereneQuestsPage() {
     <PageShell>
       <main className="product-page serene-product">
         <section className="product-hero shell" data-reveal>
-          <div className="product-copy" data-depth="1.05">
+          <div className="product-copy" data-depth="0.45">
             <div className="breadcrumb"><Link href="/apps">Apps</Link> / SereneQuests</div>
-            <p className="kicker">{app.category}</p>
+            <div className="product-brand-row">
+              <img
+                className="product-title-icon"
+                src={sereneQuestsIcon}
+                alt="SereneQuests app icon"
+                width="88"
+                height="88"
+                decoding="sync"
+                loading="eager"
+              />
+              <div>
+                <p className="kicker">{app.category}</p>
+                <span className="product-brand-caption">SereneQuests for iOS</span>
+              </div>
+            </div>
             <h1>SereneQuests</h1>
             <p className="page-copy">{app.description}</p>
             <p className="product-byline">Developed by Ayush Rout</p>
@@ -28,10 +43,10 @@ export default function SereneQuestsPage() {
             </div>
           </div>
 
-          <div className="product-art sage" data-depth="1.55" data-tilt>
+          <div className="product-art sage" data-depth="0.65" data-tilt>
             <div className="ambient-ring ambient-ring-one" aria-hidden="true" />
             <div className="ambient-ring ambient-ring-two" aria-hidden="true" />
-            <img className="real-app-icon" src="/serenequests.webp" alt="SereneQuests app icon" width="1024" height="1024" />
+            <img className="real-app-icon" src={sereneQuestsIcon} alt="SereneQuests app icon" width="1024" height="1024" decoding="async" loading="eager" />
           </div>
         </section>
 
@@ -69,7 +84,7 @@ export default function SereneQuestsPage() {
 
         <section className="section shell product-section" data-reveal>
           <div className="section-heading"><span>02</span><div><p className="kicker">Highlights</p><h2>Designed to feel quieter.</h2></div></div>
-          <div className="feature-grid">{app.features.map((feature,i)=><div className="feature-card" data-depth=".45" data-tilt key={feature}><span>0{i+1}</span><h3>{feature}</h3></div>)}</div>
+          <div className="feature-grid">{app.features.map((feature,i)=><div className="feature-card" key={feature}><span>0{i+1}</span><h3>{feature}</h3></div>)}</div>
         </section>
 
         <section className="section shell product-section" data-reveal>
