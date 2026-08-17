@@ -28,7 +28,9 @@ export default function SereneQuestsPage() {
               <Link className="button secondary" href="/articles/designing-healthier-digital-habits">Why I built it</Link>
             </div>
           </div>
-          <div className="product-visual sage" data-depth="1.7"><div className="app-icon">S</div></div>
+          <div className="product-visual sage" data-depth="1.7">
+            <img className="real-app-icon" src="/serenequests.webp" alt="SereneQuests app icon" width="512" height="512" />
+          </div>
         </section>
 
         <section className="section shell">
