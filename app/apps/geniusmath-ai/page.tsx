@@ -1,61 +1,72 @@
-'use client';
+import type { Metadata } from "next";
+import Link from "next/link";
+import { PageShell } from "@/components/SiteChrome";
+import { AppStoreBadge } from "@/components/AppStoreBadge";
+import { apps } from "@/lib/content";
 
-import Link from 'next/link';
-import { SiteChrome } from '@/components/SiteChrome';
-import { AppStoreBadge } from '@/components/AppStoreBadge';
+const app = apps[0];
+const geniusMathIcon = "https://raw.githubusercontent.com/530ayush12/GeniusMath-AI-iOS/main/GeniusMath%20AI/Assets.xcassets/AppIcon.appiconset/GeniusMath-AppIcon-Zoomed-1024.png?v=20260817";
 
-export default function GeniusMathAIPage() {
+export const metadata: Metadata = {
+  title: "GeniusMath AI — AI Math Practice",
+  description: app.description,
+};
+
+export default function GeniusMathPage() {
   return (
-    <SiteChrome>
-      <main className="app-detail-page">
-        <section className="app-detail-hero shell">
-          <div className="app-detail-icon-wrap">
-            <img
-              src="https://raw.githubusercontent.com/530ayush12/GeniusMath-AI-iOS/main/GeniusMath%20AI/Assets.xcassets/AppIcon.appiconset/GeniusMath-AppIcon-Zoomed-1024.png?v=20260817"
-              alt="GeniusMath AI app icon"
-              className="app-detail-icon"
-              width={180}
-              height={180}
-              loading="eager"
-            />
-          </div>
-          <div className="app-detail-copy">
-            <p className="eyebrow">iPhone · Education</p>
+    <PageShell>
+      <main className="product-page genius-product">
+        <section className="product-hero shell" data-reveal>
+          <div className="product-copy" data-depth="0.45">
+            <div className="breadcrumb"><Link href="/apps">Apps</Link> / GeniusMath AI</div>
+            <div className="product-brand-row">
+              <img
+                className="product-title-icon fx-icon"
+                src={geniusMathIcon}
+                alt="GeniusMath AI f(x) app icon"
+                width="88"
+                height="88"
+                decoding="sync"
+                loading="eager"
+              />
+              <div>
+                <p className="kicker">{app.category}</p>
+                <span className="product-brand-caption">GeniusMath AI for iOS</span>
+              </div>
+            </div>
             <h1>GeniusMath AI</h1>
-            <p className="app-detail-lede">Understand it. Master it.</p>
-            <p>
-              GeniusMath AI is a focused math-practice experience designed to make personalized practice feel fast, clear, and useful. Generate fresh questions, work through them at your own pace, and review explanations when you need another way into a problem.
-            </p>
-            <AppStoreBadge href="https://apps.apple.com/us/app/geniusmath-ai/id6790629890" label="GeniusMath AI" />
+            <p className="page-copy">{app.description}</p>
+            <p className="product-byline">Developed by Ayush Rout</p>
+            <div className="product-actions">
+              <AppStoreBadge href={app.appStore} label={app.name} />
+              <Link className="button secondary" href="/articles/thoughtful-technology-personal-learning">Why I built it</Link>
+            </div>
+          </div>
+
+          <div className="product-art violet fx-art" data-depth="0.65" data-tilt>
+            <div className="ambient-ring ambient-ring-one" aria-hidden="true" />
+            <div className="ambient-ring ambient-ring-two" aria-hidden="true" />
+            <img className="real-app-icon fx-icon" src={geniusMathIcon} alt="GeniusMath AI f(x) app icon" width="1024" height="1024" decoding="async" loading="eager" />
           </div>
         </section>
 
-        <section className="shell app-detail-grid">
-          <article className="app-detail-card">
-            <p className="eyebrow">Practice that adapts</p>
-            <h2>Choose what you want to work on.</h2>
-            <p>
-              Move from arithmetic and pre-algebra through Algebra I, geometry, Algebra II, trigonometry, and precalculus. Adjust the number of questions and difficulty so a quick review can stay quick and a deeper session can go further.
-            </p>
-          </article>
-          <article className="app-detail-card">
-            <p className="eyebrow">Built for understanding</p>
-            <h2>Answers are only part of the experience.</h2>
-            <p>
-              GeniusMath AI emphasizes corrections and step-by-step explanations so practice can become feedback instead of a score alone. The goal is to help you see what changed, where a mistake happened, and what to try next.
-            </p>
-          </article>
+        <section className="section shell product-section" data-reveal>
+          <div className="section-heading"><span>01</span><div><p className="kicker">Highlights</p><h2>Practice that explains itself.</h2></div></div>
+          <div className="feature-grid">{app.features.map((feature,i)=><div className="feature-card" key={feature}><span>0{i+1}</span><h3>{feature}</h3></div>)}</div>
         </section>
 
-        <section className="shell app-detail-story">
-          <p className="eyebrow">Why I built it</p>
-          <h2>I wanted math practice to feel less repetitive.</h2>
-          <p>
-            As a student, I wanted a way to open an app, choose the exact topic I was working on, and immediately get useful practice without digging through a fixed worksheet. GeniusMath AI grew from that idea: a small, focused tool that makes it easier to practice intentionally.
-          </p>
-          <Link href="/story" className="text-link">Read the Meritwise story →</Link>
+        <section className="section shell product-section" data-reveal>
+          <div className="story-block personal">
+            <h3>Why I built it</h3>
+            <div className="first-person">
+              <span className="story-marker">Builder’s note</span>
+              <p>I kept running into the same problem while practicing math: getting more questions was easy, but getting useful feedback at the exact moment I needed it was harder.</p>
+              <p>So I built GeniusMath AI around the loop I wanted for myself — choose a topic, set the difficulty, practice, understand the mistake, and try again without a lot of friction.</p>
+              <p>I’m still refining that loop. The goal is not to make AI the star of the app. The goal is to make practice feel more responsive and explanations easier to reach.</p>
+            </div>
+          </div>
         </section>
       </main>
-    </SiteChrome>
+    </PageShell>
   );
 }
