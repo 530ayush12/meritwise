@@ -6,7 +6,7 @@ import "./extras.css";
 import "./motion.css";
 import "./icon-fidelity.css";
 
-const meritwiseIcon = "/meritwise-icon.png?v=6";
+const meritwiseIcon = "/meritwise-icon.png?v=7";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://meritwise.xyz"),
@@ -17,14 +17,7 @@ export const metadata: Metadata = {
   description: "Independent apps, first-person stories, and writing about learning, well-being, product design, and building thoughtful technology.",
   applicationName: "Meritwise",
   icons: {
-    icon: [
-      { url: meritwiseIcon, type: "image/png", sizes: "1024x1024" },
-      { url: meritwiseIcon, type: "image/png", sizes: "any" },
-    ],
-    shortcut: meritwiseIcon,
-    apple: [
-      { url: meritwiseIcon, type: "image/png", sizes: "1024x1024" },
-    ],
+    icon: meritwiseIcon,
   },
   openGraph: {
     title: "Meritwise",
@@ -38,11 +31,6 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href={meritwiseIcon} type="image/png" />
-        <link rel="shortcut icon" href={meritwiseIcon} type="image/png" />
-        <link rel="apple-touch-icon" href={meritwiseIcon} />
-      </head>
       <body>
         <ScrollDepth />
         {children}
