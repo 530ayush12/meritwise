@@ -1,0 +1,60 @@
+/* App icon fidelity: preserve the supplied artwork exactly while allowing responsive sizing. */
+.fx-icon {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  image-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+  will-change: auto;
+  filter: none !important;
+  opacity: 1;
+}
+
+.app-card-icon.fx-icon,
+.product-title-icon.fx-icon {
+  aspect-ratio: 1 / 1;
+  flex: 0 0 auto;
+}
+
+.product-art.fx-art {
+  max-width: 430px;
+}
+
+.product-art.fx-art .real-app-icon.fx-icon {
+  width: 100%;
+  height: 100%;
+  max-width: 430px;
+  max-height: 430px;
+  object-fit: cover;
+  filter: none !important;
+  transition: box-shadow .28s ease, transform .28s cubic-bezier(.2,.75,.25,1);
+}
+
+.product-art.fx-art:hover .real-app-icon.fx-icon {
+  filter: none !important;
+}
+
+@media (max-width: 760px) {
+  .product-art.fx-art {
+    width: min(82vw, 360px);
+    max-width: 360px;
+    justify-self: center;
+  }
+
+  .product-art.fx-art .real-app-icon.fx-icon {
+    max-width: 360px;
+    max-height: 360px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fx-icon,
+  .product-art.fx-art,
+  .product-art.fx-art .real-app-icon.fx-icon {
+    transition: none !important;
+    animation: none !important;
+  }
+}
