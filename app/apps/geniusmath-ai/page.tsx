@@ -16,7 +16,7 @@ export default function GeniusMathPage() {
     <PageShell>
       <main className="product-page genius-product">
         <section className="product-hero shell" data-reveal>
-          <div className="product-copy" data-depth="1.05">
+          <div className="product-copy" data-depth="0.45">
             <div className="breadcrumb"><Link href="/apps">Apps</Link> / GeniusMath AI</div>
             <p className="kicker">{app.category}</p>
             <h1>GeniusMath AI</h1>
@@ -28,16 +28,16 @@ export default function GeniusMathPage() {
             </div>
           </div>
 
-          <div className="product-art violet" data-depth="1.55" data-tilt>
+          <div className="product-art violet" data-depth="0.65" data-tilt>
             <div className="ambient-ring ambient-ring-one" aria-hidden="true" />
             <div className="ambient-ring ambient-ring-two" aria-hidden="true" />
-            <img className="real-app-icon" src="/geniusmath-ai.webp" alt="GeniusMath AI app icon" width="1024" height="1024" />
+            <img className="real-app-icon" src="/geniusmath-ai.webp?v=20260817-2" alt="GeniusMath AI app icon" width="1024" height="1024" decoding="async" />
           </div>
         </section>
 
         <section className="section shell product-section" data-reveal>
           <div className="section-heading"><span>01</span><div><p className="kicker">Highlights</p><h2>Practice that explains itself.</h2></div></div>
-          <div className="feature-grid">{app.features.map((feature,i)=><div className="feature-card" data-depth=".45" data-tilt key={feature}><span>0{i+1}</span><h3>{feature}</h3></div>)}</div>
+          <div className="feature-grid">{app.features.map((feature,i)=><div className="feature-card" key={feature}><span>0{i+1}</span><h3>{feature}</h3></div>)}</div>
         </section>
 
         <section className="section shell product-section" data-reveal>
