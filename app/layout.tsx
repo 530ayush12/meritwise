@@ -16,11 +16,11 @@ export const metadata: Metadata = {
   applicationName: "Meritwise",
   icons: {
     icon: [
-      { url: "/meritwise-icon.png?v=4", type: "image/png", sizes: "1024x1024" },
+      { url: "/meritwise-icon.png?v=5", type: "image/png", sizes: "1024x1024" },
     ],
-    shortcut: "/meritwise-icon.png?v=4",
+    shortcut: "/meritwise-icon.png?v=5",
     apple: [
-      { url: "/meritwise-icon.png?v=4", type: "image/png", sizes: "1024x1024" },
+      { url: "/meritwise-icon.png?v=5", type: "image/png", sizes: "1024x1024" },
     ],
   },
   openGraph: {
