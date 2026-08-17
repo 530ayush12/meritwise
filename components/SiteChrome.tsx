@@ -1,53 +1,51 @@
-import Link from "next/link";
-import { ThemeToggle } from "@/components/ThemeToggle";
+'use client';
 
-export function SiteHeader() {
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { ThemeToggle } from '@/components/ThemeToggle';
+
+const navItems = [
+  { href: '/', label: 'Home' },
+  { href: '/apps', label: 'Apps' },
+  { href: '/articles', label: 'Articles' },
+  { href: '/story', label: 'Story' },
+  { href: '/contact', label: 'Contact' },
+];
+
+export function SiteChrome({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+
   return (
-    <header className="site-header shell">
-      <Link className="brand" href="/" aria-label="Meritwise home">
-        <span className="brand-mark">M</span>
-        <span>Meritwise</span>
-      </Link>
-      <div className="header-actions">
-        <nav aria-label="Primary navigation">
-          <Link href="/apps">Apps</Link>
-          <Link href="/articles">Articles</Link>
-          <Link href="/story">Story</Link>
-          <Link href="/contact">Contact</Link>
-        </nav>
-        <ThemeToggle />
-      </div>
-    </header>
-  );
-}
+    <>
+      <header className="site-header">
+        <div className="site-header-inner">
+          <Link href="/" className="brand" aria-label="Meritwise home">
+            <img
+              src="/icon.svg"
+              alt="Meritwise"
+              className="brand-mark"
+              width={40}
+              height={40}
+            />
+            <span>Meritwise</span>
+          </Link>
 
-export function SiteFooter() {
-  return (
-    <footer className="footer shell">
-      <div>
-        <Link className="brand" href="/">
-          <span className="brand-mark">M</span>
-          <span>Meritwise</span>
-        </Link>
-        <p>Independent apps, stories, and ideas for learning and well-being.</p>
-        <p className="developer-credit">All apps developed by Ayush Rout.</p>
-      </div>
-      <div className="footer-links">
-        <Link href="/apps">Apps</Link>
-        <Link href="/articles">Articles</Link>
-        <Link href="/story">Story</Link>
-        <Link href="/contact">Contact</Link>
-        <a href="https://x.com/ayushrout2012" target="_blank" rel="noreferrer">X ↗</a>
-        <a href="https://github.com/530ayush12" target="_blank" rel="noreferrer">GitHub ↗</a>
-      </div>
-      <div className="copyright">
-        <p>© 2026 Meritwise. All rights reserved.</p>
-        <p>GeniusMath AI and SereneQuests are developed by Ayush Rout. Apple, the Apple logo, and App Store are trademarks of Apple Inc., registered in the U.S. and other countries and regions.</p>
-      </div>
-    </footer>
-  );
-}
+          <nav className="site-nav" aria-label="Primary navigation">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href)) ? 'active' : ''}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
 
-export function PageShell({ children }: { children: React.ReactNode }) {
-  return <><SiteHeader />{children}<SiteFooter /></>;
+          <ThemeToggle />
+        </div>
+      </header>
+      {children}
+    </>
+  );
 }
