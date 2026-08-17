@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ScrollDepth } from "@/components/ScrollDepth";
 import "./globals.css";
+import "./refine.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://meritwise.xyz"),
