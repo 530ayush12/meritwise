@@ -1,0 +1,60 @@
+/* Site-wide motion layer */
+:root{--scroll-progress:0}
+html{scroll-behavior:smooth}
+body{animation:pageIn .55s cubic-bezier(.2,.8,.2,1) both}
+@keyframes pageIn{from{opacity:0}to{opacity:1}}
+
+.site-header{transition:background .35s ease,border-color .35s ease,box-shadow .35s ease;box-shadow:0 1px 0 color-mix(in srgb,var(--line) 70%,transparent)}
+.site-header:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;transform-origin:left;transform:scaleX(var(--scroll-progress));background:linear-gradient(90deg,#4ed0ff,#7b67ff,#80d46c);opacity:.8}
+
+[data-reveal]{opacity:0;transform:translate3d(0,34px,0) scale(.985);filter:blur(10px);transition:opacity .9s cubic-bezier(.16,1,.3,1) var(--reveal-delay,0ms),transform .9s cubic-bezier(.16,1,.3,1) var(--reveal-delay,0ms),filter .9s cubic-bezier(.16,1,.3,1) var(--reveal-delay,0ms)}
+[data-reveal].is-visible{opacity:1;transform:translate3d(0,0,0) scale(1);filter:blur(0)}
+
+[data-depth]{--depth-scale:1;transform:perspective(1400px) translate3d(0,var(--depth-y,0px),0) rotateX(var(--depth-rx,0deg)) scale(var(--depth-scale));transition:transform .14s linear;transform-style:preserve-3d;will-change:transform}
+
+.app-card,.contact-card,.editorial-card,.feature-card,.product-art{--tilt-x:0deg;--tilt-y:0deg;--glow-x:50%;--glow-y:50%;transform-style:preserve-3d;backface-visibility:hidden}
+.app-card,.contact-card,.editorial-card{transition:transform .32s cubic-bezier(.16,1,.3,1),box-shadow .35s ease,border-color .35s ease,background .35s ease}
+.app-card:hover,.contact-card:hover,.editorial-card:hover{transform:perspective(1100px) translateY(-8px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));box-shadow:0 34px 90px var(--shadow)}
+
+.app-card:before,.contact-card:before,.editorial-card:before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(circle at var(--glow-x) var(--glow-y),rgba(255,255,255,.17),transparent 34%);opacity:0;transition:opacity .3s ease}
+.app-card:hover:before,.contact-card:hover:before,.editorial-card:hover:before{opacity:1}
+
+.product-copy h1,.page-hero h1,.hero h1{animation:titleLift .9s cubic-bezier(.16,1,.3,1) both}
+@keyframes titleLift{from{opacity:0;transform:translateY(18px);letter-spacing:-.08em}to{opacity:1;transform:translateY(0)}}
+
+.product-art{animation:floatArt 7s ease-in-out infinite alternate}
+@keyframes floatArt{from{translate:0 -3px}to{translate:0 7px}}
+.real-app-icon{transition:transform .45s cubic-bezier(.16,1,.3,1),box-shadow .45s ease,filter .45s ease}
+.product-art:hover .real-app-icon{transform:translateZ(64px) scale(1.018)}
+
+.ambient-ring-one{animation:orbitOne 18s linear infinite}
+.ambient-ring-two{animation:orbitTwo 26s linear infinite}
+@keyframes orbitOne{to{rotate:360deg}}
+@keyframes orbitTwo{to{rotate:-360deg}}
+
+.feature-grid,.app-grid,.editorial-grid,.contact-grid{perspective:1400px}
+.feature-card:hover{transform:perspective(1000px) translateY(-6px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));box-shadow:0 26px 70px var(--shadow)}
+
+.button,.text-link,.app-store-link{transition:transform .24s cubic-bezier(.16,1,.3,1),box-shadow .24s ease,background .24s ease,color .24s ease,border-color .24s ease}
+.button:hover,.text-link:hover,.app-store-link:hover{transform:translateY(-2px)}
+.button:active,.app-store-link:active{transform:translateY(0) scale(.985)}
+
+.embed-shell{transition:transform .5s cubic-bezier(.16,1,.3,1),box-shadow .5s ease;border-color:color-mix(in srgb,var(--line) 75%,var(--accent))}
+.embed-shell:hover{transform:perspective(1300px) translateY(-6px) rotateX(.7deg);box-shadow:0 34px 100px var(--shadow)}
+.embed-toolbar{background:color-mix(in srgb,var(--surface) 88%,transparent);backdrop-filter:blur(16px)}
+.embed-toolbar>a{transition:transform .2s ease,color .2s ease}.embed-toolbar>a:hover{transform:translateX(2px);color:var(--accent)}
+
+.story-block .first-person p,.prose p{transition:color .25s ease}
+.article-row{transition:transform .3s cubic-bezier(.16,1,.3,1),background .3s ease}.article-row:hover{transform:translateX(6px)}
+
+@media(max-width:760px){
+  [data-depth]{transform:none!important}
+  .product-art{animation:none}
+  .app-card:hover,.contact-card:hover,.editorial-card:hover,.feature-card:hover,.embed-shell:hover{transform:translateY(-3px)}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  body,.product-art,.ambient-ring-one,.ambient-ring-two,.product-copy h1,.page-hero h1,.hero h1{animation:none!important}
+  [data-reveal]{opacity:1!important;transform:none!important;filter:none!important;transition:none!important}
+  [data-depth],.app-card,.contact-card,.editorial-card,.feature-card,.embed-shell,.real-app-icon,.button,.text-link,.app-store-link{transform:none!important;transition:none!important}
+}
