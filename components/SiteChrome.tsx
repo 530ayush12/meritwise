@@ -13,6 +13,7 @@ export function SiteHeader() {
           <Link href="/apps">Apps</Link>
           <Link href="/articles">Articles</Link>
           <Link href="/story">Story</Link>
+          <Link href="/contact">Contact</Link>
         </nav>
         <ThemeToggle />
       </div>
@@ -28,15 +29,21 @@ export function SiteFooter() {
           <span className="brand-mark">M</span>
           <span>Meritwise</span>
         </Link>
-        <p>Independent apps and ideas for learning and well-being.</p>
+        <p>Independent apps, stories, and ideas for learning and well-being.</p>
+        <p className="developer-credit">All apps developed by Ayush Rout.</p>
       </div>
       <div className="footer-links">
         <Link href="/apps">Apps</Link>
         <Link href="/articles">Articles</Link>
         <Link href="/story">Story</Link>
+        <Link href="/contact">Contact</Link>
+        <a href="https://x.com/ayushrout2012" target="_blank" rel="noreferrer">X ↗</a>
         <a href="https://github.com/530ayush12" target="_blank" rel="noreferrer">GitHub ↗</a>
       </div>
-      <p className="copyright">© 2026 Meritwise. App Store is a trademark of Apple Inc.</p>
+      <div className="copyright">
+        <p>© 2026 Meritwise. All rights reserved.</p>
+        <p>GeniusMath AI and SereneQuests are developed by Ayush Rout. Apple, the Apple logo, and App Store are trademarks of Apple Inc., registered in the U.S. and other countries and regions.</p>
+      </div>
     </footer>
   );
 }
