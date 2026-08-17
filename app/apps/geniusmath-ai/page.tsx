@@ -11,15 +11,12 @@ export default function GeniusMathAIPage() {
         <section className="app-detail-hero shell">
           <div className="app-detail-icon-wrap">
             <img
-              src="/geniusmath-ai-icon.png"
+              src="/geniusmath-ai.webp?v=20260816"
               alt="GeniusMath AI app icon"
               className="app-detail-icon"
               width={180}
               height={180}
               loading="eager"
-              onError={(event) => {
-                event.currentTarget.src = '/geniusmath-icon.png';
-              }}
             />
           </div>
           <div className="app-detail-copy">
