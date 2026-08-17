@@ -20,7 +20,7 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
       <header className="site-header">
         <div className="site-header-inner">
           <Link href="/" className="brand" aria-label="Meritwise home">
-            <img src="/icon.svg" alt="Meritwise" className="brand-mark" width={40} height={40} />
+            <img src="/meritwise-icon.png?v=2" alt="Meritwise" className="brand-mark" width={40} height={40} />
             <span>Meritwise</span>
           </Link>
           <nav className="site-nav" aria-label="Primary navigation">
