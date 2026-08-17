@@ -4,49 +4,55 @@ import { PageShell } from "@/components/SiteChrome";
 
 export const metadata: Metadata = {
   title: "Contact Ayush Rout",
-  description: "Contact Ayush Rout, developer of Meritwise, GeniusMath AI, and SereneQuests.",
+  description: "Contact Ayush Rout about Meritwise, GeniusMath AI, SereneQuests, product feedback, or collaboration.",
 };
 
 export default function ContactPage() {
   return (
     <PageShell>
       <main>
-        <section className="page-hero shell">
+        <section className="page-hero shell contact-hero">
           <p className="kicker">Contact</p>
-          <h1>Reach <em>Ayush.</em></h1>
-          <p className="page-copy">For product feedback, questions, collaborations, or a quick hello, use X or email.</p>
+          <h1>Have something <em>worth discussing?</em></h1>
+          <p className="page-copy">For app feedback, project questions, collaborations, or thoughtful conversations about technology, reach me directly.</p>
         </section>
 
-        <section className="section shell">
+        <section className="section shell contact-section">
+          <div className="contact-intro">
+            <p className="micro">Direct</p>
+            <h2>Two simple ways to reach me.</h2>
+            <p>I read both. Email is best for detailed messages; X is useful for quick notes and public updates.</p>
+          </div>
+
           <div className="contact-grid">
-            <a className="contact-card" href="https://x.com/ayushrout2012" target="_blank" rel="noreferrer">
-              <span className="contact-label">X</span>
+            <a className="contact-card" href="mailto:ayushrout.ar@gmail.com">
+              <div className="contact-card-top"><span className="contact-icon">@</span><span className="arrow">↗</span></div>
               <div>
-                <h2>@ayushrout2012</h2>
-                <p>Follow updates and send a message on X.</p>
+                <span className="contact-label">Email</span>
+                <h3>ayushrout.ar@gmail.com</h3>
+                <p>Best for feedback, collaboration inquiries, and longer messages.</p>
               </div>
-              <span className="arrow">↗</span>
             </a>
 
-            <a className="contact-card" href="mailto:ayushrout.ar@gmail.com">
-              <span className="contact-label">Email</span>
+            <a className="contact-card" href="https://x.com/ayushrout2012" target="_blank" rel="noreferrer">
+              <div className="contact-card-top"><span className="contact-icon">X</span><span className="arrow">↗</span></div>
               <div>
-                <h2>ayushrout.ar@gmail.com</h2>
-                <p>Email for feedback, questions, or collaboration inquiries.</p>
+                <span className="contact-label">X</span>
+                <h3>@ayushrout2012</h3>
+                <p>Follow product updates or send a short message on X.</p>
               </div>
-              <span className="arrow">↗</span>
             </a>
           </div>
         </section>
 
         <section className="section shell">
           <div className="story-block personal">
-            <h3>Developer</h3>
+            <h3>About me</h3>
             <div className="first-person">
               <span className="story-marker">Ayush Rout</span>
-              <p>I build and maintain the apps showcased on Meritwise, including GeniusMath AI and SereneQuests. I also write about the decisions, experiments, and lessons behind them.</p>
-              <p>If you have thoughtful feedback about an app or the site, I genuinely want to hear it.</p>
-              <Link className="text-link" href="/story">Read my story →</Link>
+              <p>I design, build, and maintain the products showcased on Meritwise, including GeniusMath AI and SereneQuests.</p>
+              <p>I’m especially interested in thoughtful product feedback, education technology, iOS development, and ideas that make software more useful without making it noisier.</p>
+              <Link className="text-link" href="/story">Read the Meritwise story →</Link>
             </div>
           </div>
         </section>
