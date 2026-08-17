@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export function SiteHeader() {
   return (
@@ -7,11 +8,14 @@ export function SiteHeader() {
         <span className="brand-mark">M</span>
         <span>Meritwise</span>
       </Link>
-      <nav aria-label="Primary navigation">
-        <Link href="/apps">Apps</Link>
-        <Link href="/articles">Articles</Link>
-        <Link href="/story">Story</Link>
-      </nav>
+      <div className="header-actions">
+        <nav aria-label="Primary navigation">
+          <Link href="/apps">Apps</Link>
+          <Link href="/articles">Articles</Link>
+          <Link href="/story">Story</Link>
+        </nav>
+        <ThemeToggle />
+      </div>
     </header>
   );
 }
